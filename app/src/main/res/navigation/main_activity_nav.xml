@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.todoapplication.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/navigationHomeToDetail"
+            app:destination="@id/todoDetailFragment" />
+        <action
+            android:id="@+id/navigationHomeToSave"
+            app:destination="@id/todoSaveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoDetailFragment"
+        android:name="com.example.todoapplication.ui.fragment.TodoDetailFragment"
+        android:label="fragment_todo_detail"
+        tools:layout="@layout/fragment_todo_detail" >
+        <argument
+            android:name="task"
+            app:argType="com.example.todoapplication.data.model.Task" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoSaveFragment"
+        android:name="com.example.todoapplication.ui.fragment.TodoSaveFragment"
+        android:label="fragment_todo_save"
+        tools:layout="@layout/fragment_todo_save" />
+</navigation>
